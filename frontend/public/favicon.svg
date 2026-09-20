@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="94" height="94" x="3" y="3" rx="22" fill="#080918" stroke="url(#borderGrad)" stroke-width="4"/>
+  <text x="50" y="65" font-family="'Sora', 'Syne', system-ui, sans-serif" font-size="44" font-weight="800" fill="url(#gsGrad)" text-anchor="middle" letter-spacing="-1.5">GS</text>
+</svg>

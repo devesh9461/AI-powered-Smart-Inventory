@@ -1,0 +1,30 @@
+# Render Blueprint — one-click deploy
+# https://render.com/docs/blueprint-spec
+
+databases:
+  - name: smart-inventory-db
+    databaseName: smart_inventory
+    plan: free
+
+services:
+  - type: web
+    name: smart-inventory-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn run:app -c gunicorn.conf.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: smart-inventory-db
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FRONTEND_URL
+        sync: false
+      - key: AUTO_SEED_DEMO_DATA
+        value: "true"
